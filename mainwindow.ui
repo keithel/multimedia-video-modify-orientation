@@ -14,9 +14,27 @@
    <string>Video Orientation Test</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
+   <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
     <item>
-     <widget class="QVideoWidget" name="videoWidget"/>
+     <widget class="QWidget" name="widget" native="true">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
+       <item>
+        <widget class="QVideoWidget" name="videoWidget"/>
+       </item>
+       <item>
+        <widget class="QQuickWidget" name="quickWidget">
+         <property name="resizeMode">
+          <enum>QQuickWidget::ResizeMode::SizeRootObjectToView</enum>
+         </property>
+         <property name="source">
+          <url>
+           <string>qrc:/multimediaVideoModifyOrientation/RotatedVideoItem.qml</string>
+          </url>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -33,6 +51,11 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>QQuickWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">QtQuickWidgets/QQuickWidget</header>
+  </customwidget>
   <customwidget>
    <class>QVideoWidget</class>
    <extends>QWidget</extends>

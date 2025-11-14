@@ -29,5 +29,4 @@ private:
     QUrl m_videoSource;
 
     inline static AppConfig * s_singletonInstance = nullptr;
-    inline static QJSEngine *s_engine = nullptr;
 };

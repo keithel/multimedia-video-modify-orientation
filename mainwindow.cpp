@@ -4,6 +4,7 @@
 #include "appconfig.h"
 #include <QDir>
 #include <QFileInfo>
+#include <QQuickItem>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,6 +21,8 @@ MainWindow::MainWindow(QWidget *parent)
     RotationFilterSink *filterSink = new RotationFilterSink(originalSink, this);
     filterSink->setRotation(QtVideo::Rotation::Clockwise90);
     m_mediaPlayer->setVideoSink(filterSink);
+
+    QMetaObject::invokeMethod(ui->quickWidget->rootObject(), "play", Qt::QueuedConnection, QVariant(false));
 }
 
 MainWindow::~MainWindow()

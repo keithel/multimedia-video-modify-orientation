@@ -12,6 +12,6 @@ ApplicationWindow {
     RotatedVideoItem {
         id: videoItem
         anchors.fill: parent
-        Component.onCompleted: play();
+        Component.onCompleted: play(true);
     }
 }

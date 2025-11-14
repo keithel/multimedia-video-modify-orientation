@@ -56,12 +56,11 @@ AppConfig *AppConfig::instance() {
 
 AppConfig *AppConfig::create(QQmlEngine *, QJSEngine *engine)
 {
+    if (s_singletonInstance == nullptr)
+        instance();
+
     Q_ASSERT(s_singletonInstance);
     Q_ASSERT(engine->thread() == s_singletonInstance->thread());
-    if (s_engine)
-        Q_ASSERT(engine == s_engine);
-    else
-        s_engine = engine;
 
     QJSEngine::setObjectOwnership(s_singletonInstance, QJSEngine::CppOwnership);
     return s_singletonInstance;

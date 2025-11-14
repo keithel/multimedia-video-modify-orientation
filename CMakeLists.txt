@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(multimedia-video-modify-orientation LANGUAGES CXX)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets Quick Multimedia MultimediaWidgets)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets Quick QuickWidgets Multimedia MultimediaWidgets)
 
 qt_standard_project_setup()
 
@@ -34,6 +34,7 @@ target_link_libraries(multimedia-video-modify-orientation
         Qt::Core
         Qt::Widgets
         Qt::Quick
+        Qt::QuickWidgets
         Qt::Multimedia
         Qt::MultimediaWidgets
 )

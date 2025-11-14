@@ -7,8 +7,10 @@ Item {
     function stop() {
         player.stop();
     }
-    function play() {
+    function play(withAudio) {
         player.play();
+        if (!withAudio)
+            player.audioOutput = null
     }
 
     MediaPlayer {
