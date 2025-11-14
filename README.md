@@ -43,5 +43,5 @@ supply a path or URL to it on the command line.
 
 `qvideowidgetdesignerplugin` is a plugin for Qt Designer - the wysiwyg Qt Widgets designer adding
 the Qt Multimedia `QVideoWidget` to the Widget Box, So that it can be dragged, dropped, and
-manipulated easily in the Qt Designer user interface. More information in [its README.md file]
-(qvideowidgetdesignerplugin/README.md).
+manipulated easily in the Qt Designer user interface. More information in
+[its README.md file](qvideowidgetdesignerplugin/README.md).
