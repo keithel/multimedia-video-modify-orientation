@@ -14,26 +14,40 @@
    <string>Video Orientation Test</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
-    <item>
-     <widget class="QWidget" name="widget" native="true">
-      <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,1">
-       <item>
-        <widget class="QVideoWidget" name="videoWidget"/>
-       </item>
-       <item>
-        <widget class="QQuickWidget" name="quickWidget">
-         <property name="resizeMode">
-          <enum>QQuickWidget::ResizeMode::SizeRootObjectToView</enum>
-         </property>
-         <property name="source">
-          <url>
-           <string>qrc:/multimediaVideoModifyOrientation/RotatedVideoItem.qml</string>
-          </url>
-         </property>
-        </widget>
-       </item>
-      </layout>
+   <layout class="QGridLayout" name="gridLayout" rowstretch="0,1,0" columnstretch="1,1">
+    <item row="1" column="0">
+     <widget class="QVideoWidget" name="videoWidget"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QQuickWidget" name="quickWidget">
+      <property name="resizeMode">
+       <enum>QQuickWidget::ResizeMode::SizeRootObjectToView</enum>
+      </property>
+      <property name="source">
+       <url>
+        <string>qrc:/multimediaVideoModifyOrientation/RotatedVideoItem.qml</string>
+       </url>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>QVideoWidget w/ RotationFilterSink</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Qt Quick RotatedVideoItem</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
      </widget>
     </item>
    </layout>
